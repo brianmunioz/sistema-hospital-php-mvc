@@ -1,14 +1,14 @@
 <?php
 session_start();
-if($_SESSION["user"] && sizeof($_SESSION["user"][0]) == 7){
+if(isset($_SESSION["user"]) && sizeof($_SESSION["user"][0]) == 7){
 header("location:index.php");
+exit();
 }
 include("../controller/UsersController.php");
 $controladorUsuarios = new UsersController();
 
 if (isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $id = intval($datosPaciente[0]["id"]);
     $dniAenviar = intval($_POST["dni"]);
     $datosaenviar = array(
         "dni" => $_POST["dni"],
@@ -21,6 +21,7 @@ if (isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
             Logueado correctamente
             </div>";
             header("location:login.php");
+            exit();
 
     }else{
 echo "<div class='alert alert-danger' role='alert'>

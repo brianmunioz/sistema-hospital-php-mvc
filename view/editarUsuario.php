@@ -56,7 +56,7 @@ if (isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include("./includes/menu.php"); ?>
 
     <div class="container">
-        <h1 class="text-center">Agregar usuario</h1>
+        <h1 class="text-center">Editar usuario</h1>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?dni=" . $dni; ?>" method="post">
 

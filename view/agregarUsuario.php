@@ -22,7 +22,6 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
  $controladorusuario = new UsersController();
  $controladorusuario -> agregarusuario($datosaenviar);
- var_dump($datosaenviar);
 } 
 
 
@@ -71,7 +70,7 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="mb-3">
   <label for="rol" name="rol" class="form-label">rol</label>
 
-  <select class="form-select border-dark"  id="rol" aria-label="paciente">
+  <select class="form-select border-dark" name="rol" id="rol" aria-label="paciente">
   <option value="paciente" selected>paciente</option>
   <option value="medico">medico</option>
   <option value="admin">admin</option>
